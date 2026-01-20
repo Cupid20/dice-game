@@ -1,16 +1,15 @@
 let randomNumber = Math.floor(Math.random() * 6) + 1;
-document.querySelectorAll("img")[0].setAttribute("src", "images/dice" + randomNumber + ".png");
+let randomDiceImage = "images/dice" + randomNumber + ".png";
+document.querySelectorAll("img")[0].setAttribute("src", randomDiceImage); 
 let randomNumber2 = Math.floor(Math.random() * 6) + 1;
-document.getElementsByClassName("img2")[0].setAttribute("src", "images/dice" + randomNumber2 + ".png");
-function decideWinner(randomNumber, randomNumber2) {
-    if (randomNumber > randomNumber2) {
-        return document.querySelector("h1").innerHTML = "Player 1 Wins"
-    }
-    else if (randomNumber < randomNumber2) {
-        return document.querySelector("h1").innerHTML = "Player 2 Wins"
-    }
-    else {
-        return document.querySelector("h1").innerHTML = "Draw"
-    }
+let randomDiceImage2 = "images/dice" + randomNumber2 + ".png";
+document.querySelectorAll("img")[1].setAttribute("src", randomDiceImage2);
+if (randomNumber > randomNumber2) {
+    document.querySelector("h1").innerHTML = "Player 1 wins";
 }
-console.log(decideWinner(randomNumber, randomNumber2))
+else if (randomNumber2 > randomNumber) {
+    document.querySelector("h1").innerHTML = "Player 2 wins";
+}
+else {
+    document.querySelector("h1").innerHTML = "Draw";
+}
